@@ -4,7 +4,11 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Train Scheduler</title>
+  <title>Ferry Scheduler</title>
+
+  <!-- CSS links -->
+  <link rel="stylesheet" href="Assets/CSS/reset.css">
+  <link id="themeSelectorCSS" rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -27,34 +31,28 @@
 
     <br>
 
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-      <h1 class="text-center">Train Scheduler</h1>
+    <!-- Header -->
+    <div class="row justify-content-around">
+        <div class="col-8" id="title">OBX Ferry Scheduler</div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-          <div class="card card-default" style="margin-bottom:2%">
-            <div class="card-header">Current Train Schedule</div>
+    <div class="row justify-content-around">
+        <div class="col-lg-10">
+          <div class="card card-default" style="margin-bottom:2%; border:3px solid lightblue">
+            <div class="card-header" style="background:wheat; font-weight:bold">Current Ferry Schedule</div>
             <div class="card-body">
                 <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">Train Name</th>
+                        <th scope="col">Ferry Name</th>
                         <th scope="col">Destination</th>
                         <th scope="col">Frequency (min)</th>
                         <th scope="col">Next Arrival</th>
                         <th scope="col">Minutes Away</th>
+                        <th scope="col" id="removeTrain">Remove Ferry</th>
                       </tr>
                     </thead>
                     <tbody id="trainContainer">
-                      <tr id ="train-row">
-                        <td>Thomas The Train</td>
-                        <td>Happy Town</td>
-                        <td>10</td>
-                        <td>16:20</td>
-                        <td>3</td>
-                      </tr>
                     </tbody>
                   </table>
             </div>
@@ -62,35 +60,58 @@
         </div>
       </div>
 
-    <div class="row">
+    <div class="row justify-content-around">
       <!-- Sign-Up Card-->
-      <div class="col-lg-12">
-        <div class="card card-default">
-          <div class="card-header">
-            Add Train
+      <div class="col-lg-10">
+        <div class="card card-default" style="margin-bottom: 3%; border:3px solid lightblue">
+          <div class="card-header" style="background:wheat; font-weight:bold">
+            Add Ferry
           </div>
           <div class="card-body">
-
             <!-- Sign-up Form (note the various input "types")-->
-            <form role="form">
-              <div class="form-group row">
-                <label for="trainName-input">Train Name:</label>
-                <input class="form-control" id="trainName-input" type="text">
-              </div>
-              <div class="form-group row">
-                <label for="destination-input">Destination:</label>
-                <input class="form-control" id="destination-input" type="text">
-              </div>
-              <div class="form-group row">
-                <label for="frequency-input">Frequency (min)</label>
-                <input class="form-control" id="frequency-input" type="number"></input>
-              </div>
-              <div class="form-group row">
-                <label for="startTime-input">First Train Time (HH:mm - military time)</label>
-                <input class="form-control" id="startTime-input" type="text" value="18:00">
-              </div>
-              <button class="btn btn-default" id="add-train" type="submit">Submit</button>
-            </form>
+              <div class="row">
+                <form class = "col-lg-6" role="form" id="ferryForm" style="margin-right:2%; margin-left: 2%">
+                  <div class="form-group row">
+                    <label for="trainName-input">Ferry Name:</label>
+                    <input class="form-control" id="trainName-input" type="text">
+                  </div>
+                  <div class="form-group row">
+                    <label for="destination-input">Destination:</label>
+                    <input class="form-control" id="destination-input" type="text">
+                  </div>
+                  <div class="form-group row">
+                    <label for="frequency-input">Frequency (min)</label>
+                    <input class="form-control" id="frequency-input" type="number"></input>
+                  </div>
+                  <div class="form-group row">
+                    <label for="startTime-input">First Ferry Time (HH:mm - military time)</label>
+                    <input class="form-control" id="startTime-input" type="text" value="18:00">
+                  </div>
+
+                  <div class="row">
+                      <div class="col-lg-2 mr-auto">
+                        <button class="btn btn-default" id="add-train" type="submit" style="background:wheat; font-weight:bold">Submit</button>
+                      </div>
+                      <div class="col-lg-2 mr-auto">
+                        <button class="btn btn-default" id="clearSchedule" style="background:red; color:black; font-weight: bold">Clear the Schedule !</button>
+                      </div>
+                  </div>
+                </form>
+                <div class="card col-lg-5 mr-auto" style="width: 18rem;">
+                    <img class="card-img-top" src="Assets/Images/OBX.jpg" style="width:10rem; margin:3% auto" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">More Information</h5>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                              <a href="https://www.ocracokeislandrealty.com/vacation-rentals/adicus-house" class="card-link">Book a Trip!</a>
+                          </li>
+                          <li class="list-group-item">
+                              <a href="https://www.ncdot.gov/travel-maps/ferry-tickets-services/routes/Pages/default.aspx?from=11&to=0" class="card-link">NCDOT Official Ferry Schedule</a>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+              </div>  
           </div>
         </div>
       </div>
