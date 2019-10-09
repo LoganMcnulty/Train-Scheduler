@@ -9,6 +9,6 @@ using the AlpaVantage API
 - The users can get started with this project by simply filling out the ferry scheduler form, and clicking Submit. They also have the choice
 to remove individual ferries, or clear the entire sheet. 
 
-- Users can contact the creator,, at LoganGMcNulty@gmail.com
+- Users can contact the creator at LoganGMcNulty@gmail.com
 
-- Logan McNulty is hte primary contributor and mainainter of this project
+- Logan McNulty is the primary contributor and mainainter of this project
